@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace KirbyBlowoutBlastSaveEditor
+namespace KBB_Save_Editor
 {
-    public partial class KirbyBlowoutBlastSaveEditor : Form
+    public partial class KBB_Save_Editor : Form
     {
 
-        public KirbyBlowoutBlastSaveEditor()
+        public KBB_Save_Editor()
         {
             InitializeComponent();
         }
@@ -57,12 +57,14 @@ namespace KirbyBlowoutBlastSaveEditor
         {
             openFileDialog.ShowDialog();
             if (openFileDialog.FileName == "") return;
-            statusLabel.Text = Path.GetFileName(openFileDialog.FileName) + " 已打开。";
-            saveItem.Enabled = true;
-            levelGroup.Enabled = true;
-            amiiboGroup.Enabled = true;
 
             FileInfo fi = new FileInfo(openFileDialog.FileName);
+
+            if (fi.Length != 1736)
+            {
+                MessageBox.Show("存档文件大小错误。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             byte[] buff = new byte[fi.Length];
 
             FileStream fs = fi.OpenRead();
@@ -77,6 +79,11 @@ namespace KirbyBlowoutBlastSaveEditor
             {
                 amiiboBox.SetItemChecked(i, Data.GetData(7 + 2 * i) != 0);
             }
+
+            statusLabel.Text = Path.GetFileName(openFileDialog.FileName) + " 已打开。";
+            saveItem.Enabled = true;
+            levelGroup.Enabled = true;
+            amiiboGroup.Enabled = true;
 
             ReadLevelData();
         }
@@ -100,11 +107,13 @@ namespace KirbyBlowoutBlastSaveEditor
 
             bw.Close();
             fs.Close();
+
+            MessageBox.Show("保存文件成功。", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void AboutClick(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/Xzonn/KirbyBlowoutBlastSaveEditor");
+            System.Diagnostics.Process.Start("https://github.com/Xzonn/Kirby-s_Blowout_Blast_Save_Editor");
         }
 
         private void LevelChange(object sender, EventArgs e)
@@ -123,7 +132,7 @@ namespace KirbyBlowoutBlastSaveEditor
 
             if (score1 < score2 || score2 < score3)
             {
-                MessageBox.Show("请输入合理的得分。", "错误");
+                MessageBox.Show("请输入合理的得分。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ((NumericUpDown)sender).Focus();
             }
         }

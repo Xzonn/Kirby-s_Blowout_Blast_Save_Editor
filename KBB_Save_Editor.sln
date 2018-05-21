@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KirbyBlowoutBlastSaveEditor", "KirbyBlowoutBlastSaveEditor\KirbyBlowoutBlastSaveEditor.csproj", "{E4DD2DFE-2DF9-4454-9820-9E67B614D8B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kirby's_Blowout_Blast_Save_Editor", "KBB_Save_Editor.csproj", "{E4DD2DFE-2DF9-4454-9820-9E67B614D8B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

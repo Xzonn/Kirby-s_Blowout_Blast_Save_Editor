@@ -1,6 +1,6 @@
-﻿namespace KirbyBlowoutBlastSaveEditor
+﻿namespace KBB_Save_Editor
 {
-    partial class KirbyBlowoutBlastSaveEditor
+    partial class KBB_Save_Editor
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KirbyBlowoutBlastSaveEditor));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KBB_Save_Editor));
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
@@ -369,7 +369,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
-            this.Name = "KirbyBlowoutBlastSaveEditor";
+            this.Name = "KBB_Save_Editor";
             this.Text = "卡比的吸入大作战 存档修改器";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KirbyBlowoutBlastSaveEditor
+namespace KBB_Save_Editor
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace KirbyBlowoutBlastSaveEditor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new KirbyBlowoutBlastSaveEditor());
+            Application.Run(new KBB_Save_Editor());
         }
     }
 }
